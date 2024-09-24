@@ -1,5 +1,3 @@
-from utils import db_connect
-engine = db_connect()
 
 # your code here
 from flask import Flask, request, render_template
@@ -21,7 +19,7 @@ def index():
         
         data = [[val1, val2, val3, val4]]
         prediction = model.predict(data)[0]
-        pred_class = f"{prediction:.3f}
+        pred_class = f"{prediction:.3f}"
     else:
         pred_class = None
     
@@ -32,3 +30,4 @@ def index():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
