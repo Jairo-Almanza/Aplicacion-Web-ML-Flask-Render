@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Desempeño Estudiantil</title>
+</head>
+<body>
+    <h1>Predicción de Desempeño Estudiantil</h1>
+    
+    <form method="POST">
+        <label for="Attendance">Asistencia:</label>
+        <input type="number" step="any" name="Attendance" required><br><br>
+
+        <label for="Hours_studied">Horas Estudiadas:</label>
+        <input type="number" step="any" name="Hours_studied" required><br><br>
+
+        <label for="Access_to_Resources_encoded">Acceso a Recursos:</label>
+        <input type="number" step="any" name="Access_to_Resources_encoded" required><br><br>
+
+        <label for="Parental_Involvement_encoded">Involucramiento Parental:</label>
+        <input type="number" step="any" name="Parental_Involvement_encoded" required><br><br>
+
+        <input type="submit" value="Predecir">
+    </form>
+
+    {% if prediction %}
+        <h2>Predicción: {{ prediction }} M$</h2>
+    {% endif %}
+</body>
+</html>
