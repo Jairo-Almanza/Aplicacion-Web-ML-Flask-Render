@@ -24,8 +24,8 @@
         <input type="submit" value="Predecir">
     </form>
 
-    {% if prediction %}
-        <h2>Predicción: {{ prediction }} M$</h2>
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
     {% endif %}
 </body>
 </html>

@@ -19,7 +19,7 @@ def index():
         
         data = [[val1, val2, val3, val4]]
         prediction = model.predict(data)[0]
-        pred_class = f"{prediction:.3f}"
+        pred_class = prediction
     else:
         pred_class = None
     
