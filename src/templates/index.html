@@ -1,31 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predicción de Desempeño Estudiantil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Predicción de Desempeño Estudiantil</h1>
     
     <form action="/" method="POST">
         <label for="Attendance">Asistencia:</label>
-        <input type="number" step="any" name="Attendance" required><br><br>
+        <input type="number" step="any" name="Attendance" required>
 
         <label for="Hours_studied">Horas Estudiadas:</label>
-        <input type="number" step="any" name="Hours_studied" required><br><br>
+        <input type="number" step="any" name="Hours_studied" required>
 
         <label for="Access_to_Resources_encoded">Acceso a Recursos:</label>
-        <input type="number" step="any" name="Access_to_Resources_encoded" required><br><br>
+        <input type="number" step="any" name="Access_to_Resources_encoded" required>
 
         <label for="Parental_Involvement_encoded">Involucramiento Parental:</label>
-        <input type="number" step="any" name="Parental_Involvement_encoded" required><br><br>
+        <input type="number" step="any" name="Parental_Involvement_encoded" required>
 
         <input type="submit" value="Predecir">
     </form>
 
-    {% if prediction != None %}
-        <h3>Prediction: {{ prediction }}</h3>
+    {% if prediction is not none %}
+        <h3>Predicción: {{ prediction }}</h3>
     {% endif %}
 </body>
 </html>

@@ -5,7 +5,7 @@ from pickle import load
 import pandas as pd
 
 app = Flask(__name__)
-model = load(open("/workspaces/Aplicacion-Web-ML-Flask-Render/models/model_xgbregressor_42_studentperformance.sav", "rb"))
+model = load(open("../models/model_xgbregressor_42_studentperformance.sav", "rb"))
 prediction=0
 
 @app.route("/", methods=["GET", "POST"])
